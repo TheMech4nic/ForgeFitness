@@ -25,6 +25,11 @@ const appRouter = createBrowserRouter([
     path : '/trackerstats',
     element : <TrackProgress />
   },
+  
+  {
+    path : '/trackerstats',
+    element : <TrackProgress />
+  },
 ])
 function App() {
   return (

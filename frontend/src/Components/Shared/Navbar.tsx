@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from './Logo'
 import { Link } from 'react-router-dom'
 import {
@@ -10,6 +10,7 @@ import { FaGear } from 'react-icons/fa6'
   
 
 const Navbar = () => {
+
     return (
         <div>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
@@ -35,6 +36,7 @@ const Navbar = () => {
                                         <li className="hover:text-blue-500 cursor-pointer">Login</li>
                                         <li className="hover:text-blue-500 cursor-pointer">Signup</li>
                                         <li className="hover:text-blue-500 cursor-pointer">Profile</li>
+                                        <li className="hover:text-blue-500 cursor-pointer">Logout</li>
                                         <li className="hover:text-blue-500 cursor-pointer">Faq & Help</li>
                                     </ol>
                                 </PopoverContent>
