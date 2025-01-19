@@ -10,6 +10,7 @@ import { FaGear } from 'react-icons/fa6'
   
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div>
@@ -25,7 +26,7 @@ const Navbar = () => {
                         <Link to='/meditation'><li>Meditation</li></Link>
                         <Link to='/trackerstats'><li>Progress Tracker</li></Link>
                         <li>
-                            <Popover>
+                            <Popover open={isOpen} onOpenChange={setIsOpen}>
                                 <PopoverTrigger asChild>
                                     <button className="flex items-center justify-center p-2 rounded-full bg-gray-100 hover:bg-gray-200">
                                         <FaGear className="text-lg text-gray-600" />
@@ -33,8 +34,14 @@ const Navbar = () => {
                                 </PopoverTrigger>
                                 <PopoverContent className="w-48 p-4 bg-white shadow-lg rounded-lg">
                                     <ol className="flex flex-col space-y-2 font-medium text-gray-700">
-                                        <li className="hover:text-blue-500 cursor-pointer">Login</li>
-                                        <li className="hover:text-blue-500 cursor-pointer">Signup</li>
+                                        <Link to='/register' onClick={() => setIsOpen(false)}>
+                                            <li className="hover:text-blue-500 cursor-pointer">Signup</li>
+                                        </Link>
+                                        <Link to='/register'>
+                                            <li className="hover:text-blue-500 cursor-pointer">Login</li>
+                                        </Link>
+                                        
+                                        
                                         <li className="hover:text-blue-500 cursor-pointer">Profile</li>
                                         <li className="hover:text-blue-500 cursor-pointer">Logout</li>
                                         <li className="hover:text-blue-500 cursor-pointer">Faq & Help</li>
